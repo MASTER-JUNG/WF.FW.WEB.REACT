@@ -101,9 +101,9 @@ const ChildMenu = ({ parentId }) => {
                     <ListItem sx={{marginLeft:`24px`}}>
                         <ListItemButton sx={{borderLeftColor:`divider`, paddingLeft:`30px`}} selected={selected.id === m.menu_id && selected.isSelected}
                             onClick={() => setSelected({ id: m.menu_id, isSelected: true })}>
-                            
-          <Link to="user">View Products Page</Link>
-                                <Typography level="inherit" >{m.menu_name}</Typography>
+                                <Link to="user">
+                                    <Typography level="inherit" >{m.menu_name}</Typography>
+                                </Link>
                         </ListItemButton>
                     </ListItem>
                 </List>
