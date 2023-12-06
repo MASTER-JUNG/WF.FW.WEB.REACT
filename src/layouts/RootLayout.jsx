@@ -9,9 +9,15 @@ import SideLayout from "./SideLayout";
 const RootLayout = () => {
 
     const [open, setOpen] = React.useState(false);
+    const [marginLeft, setMarginLeft] = React.useState(0);
     const theme = useTheme();
 
     const changeOpenState = (val) => {
+        if(val) {
+            setMarginLeft(300)
+        } else {
+            setMarginLeft(0)
+        }
         setOpen(val)
     }
 
@@ -40,7 +46,7 @@ const RootLayout = () => {
                     <SideLayout changeOpenState={changeOpenState} />
                 </Box>
             </Drawer>
-            <Box sx={{ marginLeft:`300px`, marginTop:`300px`}}>
+            <Box sx={{ marginLeft:{marginLeft}, marginTop:`300px`}}>
             <Outlet />
             </Box>
         </>
